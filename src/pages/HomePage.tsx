@@ -1,12 +1,6 @@
 import { Button } from "@mui/material";
+import Header from "../components/Header";
 
 export const HomePage = () => {
-  return (
-    <div>
-      HomePage
-      <Button variant="contained" color="primary">
-        TESTE
-      </Button>
-    </div>
-  );
+  return <div>home page</div>;
 };
