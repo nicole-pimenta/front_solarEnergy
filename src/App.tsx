@@ -1,3 +1,9 @@
+import { RoutesMain } from "./routes/RoutesMain";
+
 export const App = () => {
-  return <>OLA</>;
+  return (
+    <div>
+      <RoutesMain />
+    </div>
+  );
 };
