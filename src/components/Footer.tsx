@@ -7,7 +7,7 @@ export const Footer = () => {
   return (
     <Box sx={{ flexGrow: 0 }}>
       <AppBar position="static">
-        <Container maxWidth="xl">
+        <Container maxWidth="lg">
           <Toolbar> ícones de redes sociais</Toolbar>
         </Container>
       </AppBar>
