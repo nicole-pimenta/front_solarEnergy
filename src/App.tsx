@@ -1,9 +1,13 @@
+import { ThemeProvider } from "@mui/material";
 import { RoutesMain } from "./routes/RoutesMain";
+import { LightTheme } from "./themes";
 
 export const App = () => {
   return (
     <div>
-      <RoutesMain />
+      <ThemeProvider theme={LightTheme}>
+        <RoutesMain />
+      </ThemeProvider>
     </div>
   );
 };
