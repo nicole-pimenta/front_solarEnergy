@@ -11,7 +11,7 @@ import LightModeIcon from "@mui/icons-material/LightMode";
 import WbSunnyIcon from "@mui/icons-material/WbSunny";
 
 export const Header = () => {
-  const { toggleTheme } = useAppThemeContext();
+  const { toggleTheme, themeName } = useAppThemeContext();
   return (
     <Box sx={{ flexGrow: 0 }}>
       <AppBar position="static">
@@ -39,8 +39,11 @@ export const Header = () => {
               marginLeft={"30px"}
               sx={{ display: "flex", gap: "10px" }}
             >
-              <ModeNightIcon onClick={toggleTheme} />
-              <LightModeIcon onClick={toggleTheme} />
+              {themeName === "dark" ? (
+                <LightModeIcon onClick={toggleTheme} />
+              ) : (
+                <ModeNightIcon onClick={toggleTheme} />
+              )}
             </Box>
           </Toolbar>
         </Container>
