@@ -1,3 +1,3 @@
 export const CalculationByIdPage = () => {
-  return <div>CalculationByIdPage</div>;
+  return <>id per page</>;
 };

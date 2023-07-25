@@ -43,6 +43,10 @@ export const AppThemeProvider = ({ children }: IThemeProviderProps) => {
           width="100vw"
           height="100vh"
           bgcolor={theme.palette.background.default}
+          sx={{
+            display: "flex",
+            flexDirection: "column",
+          }}
         >
           {children}
         </Box>
