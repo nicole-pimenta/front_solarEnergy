@@ -9,6 +9,7 @@ import {
 } from "@mui/material";
 import TextField from "@mui/material/TextField";
 import { useAppThemeContext } from "../contexts";
+import { Form } from "../components/Form/Form";
 
 export const CalculationPage = () => {
   const { themeName } = useAppThemeContext();
@@ -74,49 +75,11 @@ export const CalculationPage = () => {
               alignItems: "center",
             }}
           >
-            <Box
-              sx={{
-                display: "flex",
-                flexDirection: "column",
-                alignItems: "center",
-                "& > :not(style)": { m: 1 },
-              }}
-            >
-              <FilledInput
-                id="filled-adornment-power"
-                endAdornment={
-                  <InputAdornment position="end">Kw</InputAdornment>
-                }
-                aria-describedby="filled-weight-helper-text"
-              />
-              <FormHelperText id="filled-weight-helper-text">
-                Energy power
-              </FormHelperText>
-
-              <FilledInput
-                id="filled-adornment-width"
-                endAdornment={<InputAdornment position="end">m</InputAdornment>}
-                aria-describedby="filled-weight-helper-text"
-              />
-              <FormHelperText id="filled-weight-helper-text">
-                Width
-              </FormHelperText>
-              <FilledInput
-                id="filled-adornment-width"
-                endAdornment={<InputAdornment position="end">m</InputAdornment>}
-                aria-describedby="filled-weight-helper-text"
-              />
-              <FormHelperText id="filled-weight-helper-text">
-                Height
-              </FormHelperText>
-            </Box>
-            <Button variant="contained" color="primary">
-              Simulate
-            </Button>
+            <Form />
           </Box>
 
           <Box
-            bgcolor={"grey"}
+            bgcolor={"white"}
             height={"90%"}
             width={"100%"}
             sx={{
