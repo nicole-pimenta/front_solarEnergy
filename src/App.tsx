@@ -7,11 +7,9 @@ export const App = () => {
   return (
     <>
       <Header />
-
       <Box sx={{ flexGrow: 1 }}>
         <RoutesMain />
       </Box>
-
       <Footer />
     </>
   );
