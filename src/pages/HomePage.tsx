@@ -23,12 +23,10 @@ export const HomePage = () => {
             justifyContent: "center",
             alignItems: "center",
             flexGrow: 1,
-            margin: "40px",
-
-            gap: "40px",
+            gap: "10px",
           }}
         >
-          <Box max-width={"100%"}>
+          <Box width={"50vw"}>
             <Typography
               variant="h2"
               color={themeName === "dark" ? "white" : "black"}
@@ -70,10 +68,9 @@ export const HomePage = () => {
             </Button>
           </Box>
 
-          <Box max-width={"50%"}>
+          <Box width={"50vw"} m="20px">
             <img
               src={solarPanel}
-              height={"350px"}
               width={"100%"}
               alt="Solar panel image"
               style={{ borderRadius: "5px", boxShadow: "10px -8px teal" }}
