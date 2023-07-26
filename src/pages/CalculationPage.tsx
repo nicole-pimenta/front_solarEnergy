@@ -1,13 +1,4 @@
-import {
-  Box,
-  Button,
-  Container,
-  FilledInput,
-  FormHelperText,
-  InputAdornment,
-  Typography,
-} from "@mui/material";
-import TextField from "@mui/material/TextField";
+import { Box, Container, Typography } from "@mui/material";
 import { useAppThemeContext } from "../contexts";
 import { Form } from "../components/Form/Form";
 
@@ -51,12 +42,12 @@ export const CalculationPage = () => {
 
         <Box
           width={"90%"}
-          height={"75%"}
+          height={"85%"}
           sx={{
             display: "flex",
             justifyContent: "center",
             gap: "10px",
-            alignItems: "flex-start",
+            alignItems: "center",
             flexDirection: {
               xl: "row",
               lg: "row",

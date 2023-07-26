@@ -5,8 +5,7 @@ import Toolbar from "@mui/material/Toolbar";
 import InstagramIcon from "@mui/icons-material/Instagram";
 import FacebookIcon from "@mui/icons-material/Facebook";
 import YouTubeIcon from "@mui/icons-material/YouTube";
-import FavoriteBorderIcon from "@mui/icons-material/FavoriteBorder";
-import { useAppThemeContext } from "../contexts";
+import { useAppThemeContext } from "../../../contexts";
 
 export const Footer = () => {
   const { themeName } = useAppThemeContext();
@@ -33,7 +32,7 @@ export const Footer = () => {
               mb={0.5}
               color={themeName === "dark" ? "white" : "black"}
             >
-              Feito com <FavoriteBorderIcon /> por Nicole Pimenta
+              Feito por Nicole Pimenta
             </Typography>
           </Toolbar>
         </Container>

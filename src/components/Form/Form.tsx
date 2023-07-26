@@ -56,9 +56,18 @@ export const Form = () => {
         />
         {errors.height ? <span>{errors.height.message}</span> : null}
 
-        <Button variant="contained" color="primary" type="submit">
-          Simulate
-        </Button>
+        <Box
+          margin={"20px"}
+          sx={{
+            display: "flex",
+
+            justifyContent: "center",
+          }}
+        >
+          <Button variant="contained" color="primary" type="submit">
+            Simulate
+          </Button>
+        </Box>
       </form>
     </Box>
   );

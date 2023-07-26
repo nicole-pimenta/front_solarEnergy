@@ -1,7 +1,7 @@
 import { Box, Typography } from "@mui/material";
 import { ForwardedRef, InputHTMLAttributes, forwardRef } from "react";
 import { StyledInputElement } from "./StyledInput";
-import Inputfrom "@mui/base/Input";
+import Input from "@mui/base/Input";
 
 import { useAppThemeContext } from "../../../contexts";
 interface IInputProps extends InputHTMLAttributes<HTMLInputElement> {
