@@ -1,5 +1,5 @@
 import { Box, Container, Typography } from "@mui/material";
-import { useAppThemeContext } from "../contexts";
+import { useAppThemeContext } from "../providers";
 import { Form } from "../components/Form/Form";
 
 export const CalculationPage = () => {

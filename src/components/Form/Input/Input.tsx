@@ -3,7 +3,7 @@ import { ForwardedRef, InputHTMLAttributes, forwardRef } from "react";
 import { StyledInputElement } from "./StyledInput";
 import Input from "@mui/base/Input";
 
-import { useAppThemeContext } from "../../../contexts";
+import { useAppThemeContext } from "../../../providers";
 interface IInputProps extends InputHTMLAttributes<HTMLInputElement> {
   label?: string;
   id: string;

@@ -2,7 +2,7 @@ import { Box, Button, Container } from "@mui/material";
 import solarPanel from "../assets/solarPanel.jpg";
 import { Typography } from "@mui/material";
 import { Link } from "@mui/material";
-import { useAppThemeContext } from "../contexts";
+import { useAppThemeContext } from "../providers";
 
 export const HomePage = () => {
   const { themeName } = useAppThemeContext();

@@ -7,16 +7,8 @@ import {
 } from "react";
 import { ThemeProvider } from "@mui/material";
 import { Box } from "@mui/system";
-import { LightTheme, DarkTheme } from "../themes";
-
-interface IThemeContextData {
-  themeName: "light" | "dark";
-  toggleTheme: () => void;
-}
-
-interface IThemeProviderProps {
-  children: React.ReactNode;
-}
+import { LightTheme, DarkTheme } from "../../themes";
+import { IThemeContextData, IThemeProviderProps } from "./@types";
 
 export const ThemeContext = createContext({} as IThemeContextData);
 

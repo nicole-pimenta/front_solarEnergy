@@ -5,7 +5,7 @@ import Toolbar from "@mui/material/Toolbar";
 import InstagramIcon from "@mui/icons-material/Instagram";
 import FacebookIcon from "@mui/icons-material/Facebook";
 import YouTubeIcon from "@mui/icons-material/YouTube";
-import { useAppThemeContext } from "../../../contexts";
+import { useAppThemeContext } from "../../../providers";
 
 export const Footer = () => {
   const { themeName } = useAppThemeContext();
