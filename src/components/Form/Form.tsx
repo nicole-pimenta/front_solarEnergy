@@ -3,10 +3,14 @@ import { zodResolver } from "@hookform/resolvers/zod";
 import { InputComponent } from "./Input/Input";
 import { formSchema, TFormValues } from "./formSchema";
 import { Box, Button } from "@mui/material";
-import { useState } from "react";
 
+import {
+  calculateSolarPanelQuantity,
+  calculateMicroinverterQuantity,
+  solarPanelTotalLength,
+  availableTotalArea,
+} from "./functions";
 export const Form = () => {
-  const [data, setData] = useState({});
   const {
     register,
     handleSubmit,
@@ -20,23 +24,24 @@ export const Form = () => {
     const { energy, width, height } = formValues;
 
     // 1.Qtd de painéis solares
-    const solarPanelQuantity = Math.ceil(parseInt(energy) / 550);
+    const solarPanelQuantity = calculateSolarPanelQuantity(energy);
 
     //2. Qtd de microinversores necessários
-    const microinverterQuantity = Math.ceil(solarPanelQuantity / 4);
+    const microinverterQuantity =
+      calculateMicroinverterQuantity(solarPanelQuantity);
 
     //3. Comprimento(m2) total dos painéis solares
-    const solarPanelTotalLength = solarPanelQuantity * (1.95 * 1.1);
+    const solarPanelLength = solarPanelTotalLength(solarPanelQuantity);
 
     //4. Área disponível para instalação
-    const availableArea = parseInt(width) * parseInt(height);
+    const availableArea = availableTotalArea(width, height);
 
-    setData({
-      solarPanelQuantity,
-      microinverterQuantity,
-      solarPanelTotalLength,
-      availableArea,
-    });
+    // setData({
+    //   solarPanelQuantity,
+    //   microinverterQuantity,
+    //   solarPanelTotalLength,
+    //   availableArea,
+    // });
   };
   const onSubmit: SubmitHandler<TFormValues> = (formValue) => {
     calculateResources(formValue);
