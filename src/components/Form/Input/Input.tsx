@@ -1,7 +1,6 @@
 import { Box, TextField, Typography } from "@mui/material";
 import { ForwardedRef, InputHTMLAttributes, forwardRef } from "react";
 import { StyledInputElement } from "./StyledInput";
-import Input from "@mui/base/Input";
 
 import { useAppThemeContext } from "../../../providers";
 interface IInputProps extends InputHTMLAttributes<HTMLInputElement> {
@@ -32,12 +31,7 @@ export const InputComponent = forwardRef(
           {label ? <label htmlFor={id}>{label}</label> : null}
         </Typography>
         ⁠
-        <TextField
-          // slots={{ input: StyledInputElement }}
-          inputProps={{ step: 0.01 }}
-          ref={ref}
-          {...rest}
-        />
+        <StyledInputElement ref={ref} {...rest} />
       </Box>
     );
   }

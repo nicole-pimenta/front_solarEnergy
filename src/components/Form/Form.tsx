@@ -86,6 +86,7 @@ export const Form = () => {
           placeholder="meters"
           type="number"
           id="title"
+          step={0.01}
           {...register("height")}
         />
         {errors.height ? <span>{errors.height.message}</span> : null}
@@ -94,6 +95,7 @@ export const Form = () => {
           placeholder="meters"
           type="number"
           id="title"
+          step={0.01}
           {...register("width")}
         />
         {errors.width ? <span>{errors.width.message}</span> : null}
