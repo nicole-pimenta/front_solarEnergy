@@ -87,19 +87,19 @@ export const CalculationPage = () => {
                 <Typography
                   key={data.id}
                   variant="subtitle1"
-                  mb={5}
-                  width={"80%"}
+                  width={"90%"}
                   textAlign={"left"}
                   color={themeName === "dark" ? "white" : "black"}
                 >
                   You will need to install {data.solarPanelQuantity} panels
-                  Solar paineis and {data.microinverterQuantity}
-                  microinvertes.
+                  solar and {data.microinverterQuantity} microinvertes.
                   <p>
                     The solar panels will occupy a total of
-                    {data.solarPanelLength} square meters. Your available area
-                    is
-                    {data.availableArea} square meters
+                    {data.solarPanelLength} square meters.
+                  </p>
+                  <p>
+                    Your available area is
+                    {data.availableArea} square meters.
                   </p>
                 </Typography>
               ))
