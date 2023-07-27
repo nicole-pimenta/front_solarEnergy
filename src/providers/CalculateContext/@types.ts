@@ -3,7 +3,7 @@ export interface ICalculationData {
   solarPanelQuantity: number;
   microinverterQuantity: number;
   solarPanelLength: number;
-  availableArea: number;
+  availableArea: string;
 }
 
 export interface ICalculationProps {
