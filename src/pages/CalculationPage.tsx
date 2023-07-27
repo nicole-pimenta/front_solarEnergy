@@ -89,13 +89,18 @@ export const CalculationPage = () => {
                   variant="subtitle1"
                   mb={5}
                   width={"80%"}
-                  textAlign={"center"}
+                  textAlign={"left"}
                   color={themeName === "dark" ? "white" : "black"}
                 >
-                  ` você precisará instalar ${data.solarPanelQuantity}paineis
-                  solares , ${data.microinverterQuantity} microinversores
-                  ocupando um total de ${data.solarPanelLength} m2 No seu
-                  terreno de ${data.availableArea} m2`
+                  You will need to install {data.solarPanelQuantity} panels
+                  Solar paineis and {data.microinverterQuantity}
+                  microinvertes.
+                  <p>
+                    The solar panels will occupy a total of
+                    {data.solarPanelLength} square meters. Your available area
+                    is
+                    {data.availableArea} square meters
+                  </p>
                 </Typography>
               ))
             ) : (

@@ -83,7 +83,7 @@ export const Form = () => {
         {errors.energy ? <span>{errors.energy.message}</span> : null}
         <InputComponent
           label="Insert height value:"
-          placeholder="meters"
+          placeholder="(00.0)meters"
           type="number"
           id="title"
           step={0.01}
@@ -92,7 +92,7 @@ export const Form = () => {
         {errors.height ? <span>{errors.height.message}</span> : null}
         <InputComponent
           label="Insert width value:"
-          placeholder="meters"
+          placeholder="(00.0)meters"
           type="number"
           id="title"
           step={0.01}

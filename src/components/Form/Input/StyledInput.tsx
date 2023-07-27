@@ -1,4 +1,3 @@
-import Input, { InputProps } from "@mui/base/Input";
 import { styled } from "@mui/system";
 
 const blue = {
