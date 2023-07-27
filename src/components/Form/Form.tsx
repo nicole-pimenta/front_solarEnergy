@@ -74,29 +74,29 @@ export const Form = () => {
     >
       <form onSubmit={handleSubmit(onSubmit)}>
         <InputComponent
-          label="Insert energy value:"
-          placeholder=" Kilo Watts"
+          label="Insert the requidered power:"
+          placeholder=" Kilo Watts (watt x 1000)"
           type="number"
           id="title"
           {...register("energy")}
         />
         {errors.energy ? <span>{errors.energy.message}</span> : null}
         <InputComponent
-          label="Insert width value:"
-          placeholder="centimeters"
-          type="number"
-          id="title"
-          {...register("width")}
-        />
-        {errors.width ? <span>{errors.width.message}</span> : null}
-        <InputComponent
           label="Insert height value:"
-          placeholder="centimeters"
+          placeholder="meters"
           type="number"
           id="title"
           {...register("height")}
         />
         {errors.height ? <span>{errors.height.message}</span> : null}
+        <InputComponent
+          label="Insert width value:"
+          placeholder="meters"
+          type="number"
+          id="title"
+          {...register("width")}
+        />
+        {errors.width ? <span>{errors.width.message}</span> : null}
 
         <Box
           margin={"20px"}

@@ -11,7 +11,7 @@ const solarPanelTotalLength = (solarPanelQuantity: number) => {
 };
 
 const availableTotalArea = (width: string, height: string) => {
-  return ((parseInt(width) / 100) * parseInt(height)) / 100;
+  return (Number(width) * Number(height)).toFixed(2);
 };
 
 export {

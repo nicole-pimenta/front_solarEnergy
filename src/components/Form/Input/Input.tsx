@@ -1,4 +1,4 @@
-import { Box, Typography } from "@mui/material";
+import { Box, TextField, Typography } from "@mui/material";
 import { ForwardedRef, InputHTMLAttributes, forwardRef } from "react";
 import { StyledInputElement } from "./StyledInput";
 import Input from "@mui/base/Input";
@@ -32,7 +32,12 @@ export const InputComponent = forwardRef(
           {label ? <label htmlFor={id}>{label}</label> : null}
         </Typography>
         ⁠
-        <Input slots={{ input: StyledInputElement }} ref={ref} {...rest} />
+        <TextField
+          // slots={{ input: StyledInputElement }}
+          inputProps={{ step: 0.01 }}
+          ref={ref}
+          {...rest}
+        />
       </Box>
     );
   }
