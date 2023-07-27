@@ -7,7 +7,6 @@ export const CalculationPage = () => {
   const { themeName } = useAppThemeContext();
   const { calculationData } = useContext(CalculateContext);
 
-  console.log(calculationData);
   return (
     <Box
       height={"100%"}
@@ -15,10 +14,9 @@ export const CalculationPage = () => {
         display: "flex",
         flexDirection: "column",
         alignItems: "center",
-        justifyContent: "stratch",
+        justifyContent: "center",
         gap: "10px",
       }}
-      mt={"10px"}
     >
       <Container
         maxWidth="lg"
@@ -37,7 +35,6 @@ export const CalculationPage = () => {
         </Typography>
         <Typography
           variant="subtitle1"
-          mb={5}
           color={themeName === "dark" ? "white" : "black"}
         >
           Check here if you have the necessary area for installation of your
@@ -85,15 +82,33 @@ export const CalculationPage = () => {
             }}
             style={{ borderRadius: "5px", boxShadow: "8px 5px 5px black" }}
           >
-            <Typography
-              variant="subtitle1"
-              mb={5}
-              width={"80%"}
-              textAlign={"center"}
-              color={themeName === "dark" ? "white" : "black"}
-            >
-              ... Huum, you haven't done a simulation yet.
-            </Typography>
+            {calculationData ? (
+              calculationData.map((data) => (
+                <Typography
+                  key={data.id}
+                  variant="subtitle1"
+                  mb={5}
+                  width={"80%"}
+                  textAlign={"center"}
+                  color={themeName === "dark" ? "white" : "black"}
+                >
+                  ` você precisará instalar ${data.solarPanelQuantity}paineis
+                  solares , ${data.microinverterQuantity} microinversores
+                  ocupando um total de ${data.solarPanelLength} m2 No seu
+                  terreno de ${data.availableArea} m2`
+                </Typography>
+              ))
+            ) : (
+              <Typography
+                variant="subtitle1"
+                mb={5}
+                width={"80%"}
+                textAlign={"center"}
+                color={themeName === "dark" ? "white" : "black"}
+              >
+                ... Huum, you haven't done a simulation yet.
+              </Typography>
+            )}
           </Box>
         </Box>
       </Container>
