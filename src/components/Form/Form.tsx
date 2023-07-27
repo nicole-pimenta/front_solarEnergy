@@ -10,7 +10,11 @@ import {
   solarPanelTotalLength,
   availableTotalArea,
 } from "./functions";
+import { useContext } from "react";
+import { CalculateContext } from "../../providers";
 export const Form = () => {
+  const { setCalculationData } = useContext(CalculateContext);
+
   const {
     register,
     handleSubmit,
@@ -20,7 +24,13 @@ export const Form = () => {
     resolver: zodResolver(formSchema),
   });
 
-  const calculateResources = (formValues) => {
+  interface IFormValues {
+    energy: string;
+    width: string;
+    height: string;
+  }
+
+  const calculateResources = (formValues: IFormValues) => {
     const { energy, width, height } = formValues;
 
     // 1.Qtd de painéis solares
@@ -36,12 +46,15 @@ export const Form = () => {
     //4. Área disponível para instalação
     const availableArea = availableTotalArea(width, height);
 
-    // setData({
-    //   solarPanelQuantity,
-    //   microinverterQuantity,
-    //   solarPanelTotalLength,
-    //   availableArea,
-    // });
+    const calculateData = {
+      id: 1,
+      solarPanelQuantity,
+      microinverterQuantity,
+      solarPanelLength,
+      availableArea,
+    };
+
+    setCalculationData([calculateData]);
   };
   const onSubmit: SubmitHandler<TFormValues> = (formValue) => {
     calculateResources(formValue);

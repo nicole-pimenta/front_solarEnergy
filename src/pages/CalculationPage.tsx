@@ -1,9 +1,13 @@
 import { Box, Container, Typography } from "@mui/material";
-import { useAppThemeContext } from "../providers";
+import { CalculateContext, useAppThemeContext } from "../providers";
 import { Form } from "../components/Form/Form";
+import { useContext } from "react";
 
 export const CalculationPage = () => {
   const { themeName } = useAppThemeContext();
+  const { calculationData } = useContext(CalculateContext);
+
+  console.log(calculationData);
   return (
     <Box
       height={"100%"}
