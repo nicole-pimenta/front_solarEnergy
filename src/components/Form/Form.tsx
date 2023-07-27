@@ -13,7 +13,7 @@ import {
 import { useContext } from "react";
 import { CalculateContext } from "../../providers";
 export const Form = () => {
-  const { setCalculationData } = useContext(CalculateContext);
+  const { setCalculationData, calculationData } = useContext(CalculateContext);
 
   const {
     register,
