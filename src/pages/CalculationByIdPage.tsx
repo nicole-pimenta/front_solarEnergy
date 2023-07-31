@@ -17,7 +17,7 @@ export const CalculationByIdPage = () => {
         const { data } = await api.get(`/calculo/${id}`);
         setSearchedItem(data);
 
-        toast.success("Busca realizada com sucesso!");
+        toast.success("Search successfully !");
       } catch (error) {
         toast.warn("ID not found , enter a valid id");
 
@@ -28,15 +28,42 @@ export const CalculationByIdPage = () => {
     };
     loadItem();
   }, []);
-  console.log(searchedItem);
   return (
     <Box
       sx={{
         display: "flex",
-        flexDirection: "column",
-        alignItems: "left",
-        gap: "10px",
+        justifyContent: "center",
+        alignItems: "center",
       }}
-    ></Box>
+      height={"80vh"}
+    >
+      {searchedItem !== null && (
+        <Box
+          sx={{
+            display: "flex",
+            flexDirection: "column",
+            alignItems: "left",
+            gap: "10px",
+          }}
+        >
+          {" "}
+          <Typography color="black">
+            You will need to install : {searchedItem.solarPanelQuantity}
+            solar panels and {searchedItem.microinverterQuantity}
+            microinvertes.
+            <hr />
+          </Typography>
+          <Typography color="black" textAlign="left">
+            Your available area is :{searchedItem.availableArea} square meters.
+            <hr />
+          </Typography>
+          <Typography color="black">
+            The solar panels will occupy a total of :
+            {searchedItem.solarPanelLength} square meters.
+            <hr />
+          </Typography>
+        </Box>
+      )}
+    </Box>
   );
 };

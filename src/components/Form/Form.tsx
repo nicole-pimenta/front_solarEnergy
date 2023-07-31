@@ -6,6 +6,7 @@ import { Box, Button, Typography } from "@mui/material";
 import { useContext } from "react";
 import { CalculateContext } from "../../providers";
 import { api } from "../../services/api";
+import { toast } from "react-toastify";
 export const Form = () => {
   const { setCalculationData, calculationData } = useContext(CalculateContext);
 
@@ -28,6 +29,8 @@ export const Form = () => {
     api
       .post("/calculo", formValue)
       .then((response) => setCalculationData([response.data]));
+
+    toast.success("Simulation done successfully !");
 
     reset();
   };
