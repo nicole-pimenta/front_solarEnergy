@@ -2,17 +2,9 @@ import { useForm, SubmitHandler } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { InputComponent } from "./Input/Input";
 import { formSchema, TFormValues } from "./formSchema";
-import { Box, Button } from "@mui/material";
-
-import {
-  calculateSolarPanelQuantity,
-  calculateMicroinverterQuantity,
-  solarPanelTotalLength,
-  availableTotalArea,
-} from "./functions";
+import { Box, Button, Typography } from "@mui/material";
 import { useContext } from "react";
 import { CalculateContext } from "../../providers";
-import axios from "axios";
 import { api } from "../../services/api";
 export const Form = () => {
   const { setCalculationData, calculationData } = useContext(CalculateContext);
@@ -58,7 +50,11 @@ export const Form = () => {
           id="title"
           {...register("energy")}
         />
-        {errors.energy ? <span>{errors.energy.message}</span> : null}
+        {errors.energy ? (
+          <Typography variant="body2" color="red" textAlign="left">
+            {errors.energy.message}
+          </Typography>
+        ) : null}
         <InputComponent
           label="Insert height value:"
           placeholder="(00.0)meters"
@@ -67,7 +63,11 @@ export const Form = () => {
           step={0.01}
           {...register("height")}
         />
-        {errors.height ? <span>{errors.height.message}</span> : null}
+        {errors.height ? (
+          <Typography variant="body2" color="red" textAlign="left">
+            {errors.height.message}
+          </Typography>
+        ) : null}
         <InputComponent
           label="Insert width value:"
           placeholder="(00.0)meters"
@@ -76,7 +76,11 @@ export const Form = () => {
           step={0.01}
           {...register("width")}
         />
-        {errors.width ? <span>{errors.width.message}</span> : null}
+        {errors.width ? (
+          <Typography variant="body2" color="red" textAlign="left">
+            {errors.width.message}
+          </Typography>
+        ) : null}
 
         <Box
           margin={"20px"}
