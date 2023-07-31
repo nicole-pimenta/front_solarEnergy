@@ -4,10 +4,18 @@ import { useEffect, useState } from "react";
 import { Box, Typography } from "@mui/material";
 import { toast } from "react-toastify";
 
+interface ICalculationDataSearch {
+  solarPanelQuantity: number;
+  microinverterQuantity: number;
+  solarPanelLength: number;
+  availableArea: number;
+}
+
 export const CalculationByIdPage = () => {
   const { id } = useParams();
 
-  const [searchedItem, setSearchedItem] = useState(null);
+  const [searchedItem, setSearchedItem] =
+    useState<ICalculationDataSearch | null>(null);
 
   const navigate = useNavigate();
 
