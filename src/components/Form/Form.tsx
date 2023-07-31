@@ -12,6 +12,8 @@ import {
 } from "./functions";
 import { useContext } from "react";
 import { CalculateContext } from "../../providers";
+import axios from "axios";
+import { api } from "../../services/api";
 export const Form = () => {
   const { setCalculationData, calculationData } = useContext(CalculateContext);
 
@@ -30,34 +32,10 @@ export const Form = () => {
     height: string;
   }
 
-  const calculateResources = (formValues: IFormValues) => {
-    const { energy, width, height } = formValues;
-
-    // 1.Qtd de painéis solares
-    const solarPanelQuantity = calculateSolarPanelQuantity(energy);
-
-    //2. Qtd de microinversores necessários
-    const microinverterQuantity =
-      calculateMicroinverterQuantity(solarPanelQuantity);
-
-    //3. Comprimento(m2) total dos painéis solares
-    const solarPanelLength = solarPanelTotalLength(solarPanelQuantity);
-
-    //4. Área disponível para instalação
-    const availableArea = availableTotalArea(width, height);
-
-    const calculateData = {
-      id: 1,
-      solarPanelQuantity,
-      microinverterQuantity,
-      solarPanelLength,
-      availableArea,
-    };
-
-    setCalculationData([calculateData]);
-  };
   const onSubmit: SubmitHandler<TFormValues> = (formValue) => {
-    calculateResources(formValue);
+    api
+      .post("/calculo", formValue)
+      .then((response) => setCalculationData([response.data]));
 
     reset();
   };

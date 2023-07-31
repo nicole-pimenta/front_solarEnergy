@@ -1,9 +1,10 @@
 export interface ICalculationData {
-  id: number;
+  _id: string;
   solarPanelQuantity: number;
   microinverterQuantity: number;
   solarPanelLength: number;
-  availableArea: string;
+  availableArea: number;
+  __v: number;
 }
 
 export interface ICalculationProps {
