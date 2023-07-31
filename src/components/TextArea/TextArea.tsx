@@ -22,21 +22,25 @@ export const TextArea = () => {
           sx={{
             display: "flex",
             flexDirection: "column",
-            alignItems: "center",
+            alignItems: "left",
+            gap: "10px",
           }}
         >
           <Typography color="black">
-            You will need to install {calculationData[0]?.solarPanelQuantity}
-            panels solar and {calculationData[0]?.microinverterQuantity}
+            You will need to install : {calculationData[0]?.solarPanelQuantity}
+            solar panels and {calculationData[0]?.microinverterQuantity}
             microinvertes.
+            <hr />
           </Typography>
-          <Typography mt={2} color="black">
-            Your available area is:{calculationData[0]?.availableArea} square
+          <Typography color="black" textAlign="left">
+            Your available area is :{calculationData[0]?.availableArea} square
             meters.
+            <hr />
           </Typography>
           <Typography color="black">
-            The solar panels will occupy a total of
+            The solar panels will occupy a total of :
             {calculationData[0]?.solarPanelLength} square meters.
+            <hr />
           </Typography>
         </Box>
       )}
