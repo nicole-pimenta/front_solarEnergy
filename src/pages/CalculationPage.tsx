@@ -1,11 +1,11 @@
 import { Box, Container, Typography } from "@mui/material";
-import { CalculateContext, useAppThemeContext } from "../providers";
+import { useAppThemeContext } from "../providers";
 import { Form } from "../components/Form/Form";
-import { useContext } from "react";
+import { ICalculationData } from "../providers/CalculateContext/@types";
+import { TextArea } from "../components/TextArea/TextArea";
 
 export const CalculationPage = () => {
   const { themeName } = useAppThemeContext();
-  const { calculationData } = useContext(CalculateContext);
 
   return (
     <Box
@@ -82,37 +82,7 @@ export const CalculationPage = () => {
             }}
             style={{ borderRadius: "5px", boxShadow: "8px 5px 5px black" }}
           >
-            {calculationData ? (
-              calculationData.map((data) => (
-                <Typography
-                  key={data.id}
-                  variant="subtitle1"
-                  width={"90%"}
-                  textAlign={"left"}
-                >
-                  You will need to install {data.solarPanelQuantity} panels
-                  solar and {data.microinverterQuantity} microinvertes.
-                  <Typography mt={2}>
-                    The solar panels will occupy a total of
-                    {data.solarPanelLength} square meters.
-                  </Typography>
-                  <Typography mt={2}>
-                    Your available area is
-                    {data.availableArea} square meters.
-                  </Typography>
-                </Typography>
-              ))
-            ) : (
-              <Typography
-                variant="subtitle1"
-                mb={5}
-                width={"80%"}
-                textAlign={"center"}
-                color={themeName === "dark" ? "white" : "black"}
-              >
-                ... Huum, you haven't done a simulation yet.
-              </Typography>
-            )}
+            <TextArea />
           </Box>
         </Box>
       </Container>

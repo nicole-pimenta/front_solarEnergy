@@ -24,22 +24,7 @@ export const CalculateContext = createContext({} as ICalculationContext);
 export const CalculateProvider = ({ children }: ICalculationProps) => {
   const [calculationData, setCalculationData] = useState<
     ICalculationData[] | null
-  >([]);
-
-  // useEffect(() => {
-  //   const getData = async () => {
-  //     try {
-  //       const response = await api.get<ICalc[]>("calculo");
-
-  //       setCalculationData(response.data);
-  //     } catch (error) {
-  //       if (axios.isAxiosError<IErrorCalc>(error)) {
-  //         console.error(error.response?.data.message);
-  //       }
-  //     }
-  //   };
-  //   getData();
-  // }, []);
+  >(null);
 
   return (
     <CalculateContext.Provider value={{ calculationData, setCalculationData }}>
