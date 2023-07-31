@@ -58,7 +58,7 @@ export const HomePage = () => {
 
             <Button variant="contained" color="primary">
               <Link
-                href="/calculation"
+                href="/calculo"
                 underline="hover"
                 color="inherit"
                 padding={"5px"}

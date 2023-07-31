@@ -26,7 +26,7 @@ export const Header = () => {
 
             <Button variant="contained" color="secondary">
               <Link
-                href="/calculation"
+                href="/calculo"
                 color="inherit"
                 underline="none"
                 padding={"2px"}

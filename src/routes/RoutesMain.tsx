@@ -8,7 +8,7 @@ export const RoutesMain = () => {
     <Routes>
       <Route path="/" element={<OutletComponent />}>
         <Route index element={<HomePage />} />
-        <Route path="/calculation" element={<CalculationPage />} />
+        <Route path="/calculo" element={<CalculationPage />} />
         <Route path="*" element={<Navigate to="/" />} />
       </Route>
     </Routes>
